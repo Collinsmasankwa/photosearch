@@ -48,7 +48,7 @@ function Home() {
 
                 appProvider.setErrorPresent(false);
 
-                let res = await axios.post('http://localhost:3000/get-random-photos', null, {
+                let res = await axios.post('https://photosearch-backend.onrender.com/get-random-photos', null, {
                     cancelToken: cancelToken.current.token,
                 });
 
@@ -126,7 +126,7 @@ function Home() {
                     // make req to server to get photos
                     appProvider.setErrorPresent(false);
 
-                    let res = await axios.post('http://localhost:3000/get-photos', {
+                    let res = await axios.post('https://photosearch-backend.onrender.com/get-photos', {
                         query: appProvider.currentQuery.trim(),
                         page: appProvider.currentPage,
                     }, {

@@ -56,7 +56,7 @@ function SearchBar() {
                     // make req to server to get photos
                     setErrorPresent(false);
 
-                    let res = await axios.post('http://localhost:3000/get-photos', {
+                    let res = await axios.post('https://photosearch-backend.onrender.com/get-photos', {
                         query: searchQuery.trim(),
                         page: appProvider.currentPage,
                     }, {

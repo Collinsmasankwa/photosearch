@@ -14,7 +14,7 @@ const app = express();
 const corsOptions = {
     origin: true,
     credentials: true,
-    allowedOrigins: ['http://localhost:5173'],
+    allowedOrigins: ['http://localhost:5173', 'https://photosearch-czwn.onrender.com'],
 };
 
 const axiosInstance = axios.create({
@@ -37,8 +37,7 @@ app.post('/get-random-photos', async (req, res) => {
                 `/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}&count=${count}`
             );
 
-            // todo, comment the below code
-            console.log(response.headers['x-ratelimit-remaining'])
+            // console.log(response.headers['x-ratelimit-remaining'])
 
             return res.status(200).json({
                 response: response.data,
@@ -64,8 +63,7 @@ app.post('/get-photos', async (req, res) => {
                `/search/photos/?client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}&query=${query}&per_page=${perPage}&page=${page}`
            );
 
-           // todo, comment the below code
-           console.log(response.headers['x-ratelimit-remaining'])
+           // console.log(response.headers['x-ratelimit-remaining'])
 
            return res.status(200).json({
                response: response.data,
